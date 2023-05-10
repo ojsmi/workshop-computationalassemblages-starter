@@ -29,19 +29,4 @@ io.on('connection', (p5) => {
     p5.on('disconnect', () => {
         console.log('p5 disconnected');
     });
-
-    p5.on( 'mousepressed', () => {
-        console.log('mousepressed');
-        toMax.send('/mousepressed');
-    })
-
-    p5.on( 'mousereleased', () => {
-        console.log('mousereleased');
-        toMax.send('/mousereleased');
-    });
-
-    fromMax.on( 'pulse', () => {
-        console.log( 'pulse' );
-        p5.emit( 'pulse' );
-    })
 });
